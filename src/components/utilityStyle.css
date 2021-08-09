@@ -1,0 +1,412 @@
+@import './reset.css';
+
+body{
+    background-color:#f3f5f6 !important;
+    font-size:14px;
+}
+
+/* #modal-root{
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.3);
+} */
+
+.modalRoot{
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.3);
+}
+
+/* 근무 시간 컴포넌트 스타일 */
+
+.container-wrap{
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: rgb(20 20 20 / 2%) 2px 8px 12px 0px, rgb(20 20 20 / 2%) 0px 1px 3px 0px;
+    /* padding:3rem;
+    margin : 0 0 2rem 0; */
+}
+
+.work-detail-wrapper{
+
+}
+
+.emoji{
+    font-size:2rem;
+}
+
+.work-detail-time{
+    font-size:1.2rem;
+    font-weight: bold;
+}
+
+.work-detail-title{
+    font-weight: bold;
+    color:rgb(99, 114, 131);
+}
+
+.work-total-time{
+    font-size:3rem;
+    padding:0 2rem 0 0;
+}
+
+.work-detail-subtitle{
+    font-size : 0.9rem;
+    color:rgb(99, 114, 131);
+}
+
+.work-list-wrap{
+    width:100%;
+}
+
+.work-list-date{
+    flex:1;
+}
+
+.work-list-workingTime{
+    flex:4;
+    position:relative;
+}
+
+.workingTime-emoji{
+    
+}
+
+.workingTime-workType{
+    box-shadow: rgb(99 114 131 / 24%) 0px 0px 0px 1px inset, rgb(0 0 0 / 2%) 0px 1px 2px;
+    border-radius: 6px;
+}
+
+.workingTime-workType-text{
+    font-size:0.8rem;
+    color:rgb(99, 114, 131);
+    
+}
+
+.workingTime-time{
+    
+}
+
+.workingTime-time-modify{
+    position:absolute;
+    right:0;
+}
+
+.work-list-add{
+    color:rgb(0, 112, 209);
+}
+
+.work-lists-wrap.modify{
+    transform: scale3d(1.1, 1.1, 1.1);
+    box-shadow: rgb(20 20 20 / 16%) 4px 12px 24px 0px, rgb(20 20 20 / 8%) 0px 2px 4px 0px;
+    background-color: #fff;
+    border-radius: 12px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.work-list-content{
+    padding: 2rem;
+}
+
+.work-modify-close-wrap{
+    border-top: 1px solid rgba(99, 114, 131, 0.1);
+    padding: 1rem 2rem 0rem 2rem;
+}
+
+.work-modify-closeBtn{
+    color:rgb(99, 114, 131);
+    font-size: 0.9rem;
+}
+
+/* vacation modal style */
+.apply-vacation-wrap{
+    width: calc(100% - 72px);
+    height: 85vh;
+    max-width: 1040px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.apply-vacation-inner{
+    background-color:#fff;
+    box-shadow: rgb(20 20 20 / 16%) 4px 16px 36px 0px, rgb(20 20 20 / 12%) 0px 4px 8px 0px;
+    border-radius: 16px;
+    width:100%;
+    height:100%;
+    /* position: relative; */
+}
+
+.apply-vacation-inner-left{
+    flex:7;
+    border-right:1px solid rgba(99, 114, 131, 0.16);
+    padding: 3rem;
+    position: relative;
+}
+
+.vacation-list-wrap{
+
+}
+
+.vacation-lists{
+   
+}
+
+.vacation-list-item{
+    
+}
+
+.vacation-list-date{
+
+}
+
+.vacation-list-date-text{
+    position : relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left:2rem;
+}
+
+.vacation-list-date-text::before{
+    content: '';
+    width:10px;
+    height:10px;
+    position:absolute;
+    left:0;
+    background-color: rgb(197, 204, 211);
+    border-radius: 100%;
+    display: inline-block;
+}
+
+.apply-vacation-inner-right{
+    flex:3;
+    padding: 3rem;
+    background-color: rgba(99, 114, 131, 0.03);
+}
+
+.apply-vacation-title{
+
+}
+
+.vacation-title-text{
+    font-size:2rem;
+    font-weight: bold;
+}
+
+.apply-vacation-datePick{
+    
+}
+
+.apply-vacation-inner-close{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    border-top: 1px solid rgba(99, 114, 131, 0.16);
+    padding: 2rem;
+}
+
+.apply-vacation-btn{
+    background-color:rgb(8, 126, 247);
+    color:#fff;
+    border-radius: 10px;
+    box-shadow: rgb(0 0 0 / 8%) 0px 1px 4px 0px;
+    padding:0.5rem 1rem;
+    margin-left: 1rem;
+}
+
+.drop-down-menu{
+    width:7rem;
+}
+
+.apply-subject-wrap{
+    margin-bottom:2rem;
+}
+
+.apply-subject-step{
+    border:1px solid rgb(237, 240, 242);
+    background-color: rgb(255, 255, 255);
+}
+
+.apply-subject-title{
+    font-size:0.9rem;
+    color:rgb(58, 80, 100);
+}
+
+.apply-subject-btn{
+    padding-left:0 !important;
+    padding-right:0 !important;
+}
+
+.apply-subject-plus{
+    display: flex;
+    align-items: center;
+}
+
+.plus-icon-circle{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: rgb(0 0 0 / 2%) 0px 1px 2px 0px, rgb(0 0 0 / 12%) 0px 0px 0px 1px inset;
+}
+
+.plus-icon{
+    display: inline-block;
+    color: rgb(0, 112, 209);
+}
+
+.apply-subject-txt{
+    color: rgb(0, 112, 209);
+    margin-left: 1rem;
+}
+
+.apply-add{
+    margin-bottom:2rem;
+}
+
+.apply-add-wrap{
+    background-color: rgba(58, 80, 100, 0.07);
+    width:100%;
+    border-radius: 10px;
+    padding:5px 0;
+}
+
+.apply-add-step{
+    
+}
+
+
+/* user component style */
+.company-wrap{
+    padding:2rem 0;
+}
+
+.setting-icon-wrap{
+    box-shadow:rgb(0 0 0 / 2%) 0px 1px 2px 0px, rgb(0 0 0 / 12%) 0px 0px 0px 1px inset;
+    border-radius: 6px;
+    padding:5px;
+}
+
+.setting-icon{
+    font-size: 1.5rem;
+    color: rgb(139, 152, 167);
+}
+
+.user-wrap-left{
+    width:48%;
+    min-height:600px;
+    background-color: #fff;
+    border-radius: 12px;
+}
+
+.user-table-wrap{
+    font-size: 0.9rem;
+}
+
+.user-table-job{
+    position:relative;
+    padding-left:2rem;
+}
+
+.user-table-job::before{
+    content:'';
+    width:5px;
+    height:5px;
+    background-color:rgb(139, 152, 167);
+    border-radius: 100%;
+    position:absolute;
+    left:0; top:50%;
+    transform:translateY(-50%);
+}
+
+.user-table-counts{
+    background-color:rgba(99, 114, 131, 0.12);
+    border-radius: 6px;
+    padding:2px 5px;
+    
+}
+
+.user-table-count{
+    display: inline-block;
+    font-weight: 600;
+    
+}
+
+.user-wrap-right{
+    width:48%;
+    min-height:600px;
+    background-color: #fff;
+    border-radius: 12px;
+}
+
+.user-wrap-inner{
+    /* width:50%;
+    min-height:600px;
+    background-color: #fff;
+    border-radius: 12px; */
+}
+
+.user-search{
+    flex:0;
+}
+
+.user-search-box{
+    display: flex;
+    padding: 2rem 0;
+    border-bottom: 1px solid rgba(58, 80, 100, 0.08);
+}
+.user-search-input{
+    border:none;
+    background:none;
+    width:100%;
+    margin-left: 1rem;
+}
+
+.user-total-count{
+    font-size:0.9rem;
+    color:rgb(99, 114, 131);
+    border-bottom: 1px solid rgba(58, 80, 100, 0.08);
+}
+
+.user-thumb{
+    width: 40px;
+    height: 40px;
+    background-color: rgb(119, 160, 212);
+    box-shadow: rgb(0 0 0 / 10%) 0px 0px 0px 1px inset;
+    border-radius: 100%;
+    color: #fff;
+    line-height: 40px;
+    text-align: center;
+    margin-right:2rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+.user-thumb-text{
+    display: inline-block;
+    font-size:0.9rem;
+}
+
+.user-name{
+    margin-right: 2rem;
+}
+
+.user-job{
+    font-size:0.85rem;
+    color:rgb(139, 152, 167);
+}

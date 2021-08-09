@@ -1,0 +1,21 @@
+/* 헤더 스타일 */
+
+.header-wrapper{
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgb(63 70 125 / 20%) 0px 1px 3px 0px, rgb(101 94 115 / 10%) 2px 4px 8px 1px;
+    margin-bottom:3.5rem;
+}
+
+.header-icon{
+    width:60px;
+    height:60px;
+    border:none;
+    background:none;
+    color:rgb(99, 114, 131);
+}
+
+.header-icon-name{
+    white-space: nowrap;
+    padding-top : 10px;
+    font-size: 0.9rem;
+}
