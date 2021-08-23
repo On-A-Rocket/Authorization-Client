@@ -71,8 +71,26 @@ body{
     width:100%;
 }
 
+.custom-button-div {
+    width: 100%;
+    background: #fff;
+    border: none;
+    color: black;
+}
+
+.custom-button-div:hover {
+    width: 100%;
+    background: #fff !important;
+    border: none !important;
+    color: black !important;
+}
+
 .work-list-date{
     flex:1;
+}
+
+.text-align {
+    text-align: left;
 }
 
 .work-list-workingTime{
@@ -409,4 +427,83 @@ body{
 .user-job{
     font-size:0.85rem;
     color:rgb(139, 152, 167);
+}
+
+.add-user-title{
+    text-align : center;
+    font-weight: bold;
+}
+
+.form-submit{
+    width: 100%;
+}
+
+.add-user-wrap{
+    background-color: #fff;
+    padding:4rem;
+}
+
+.add-user-back {
+    font-size: 20px;
+}
+
+.add-user-back-link {
+    color :  black !important;
+}
+
+.add-user-back-text {
+    font-weight: bold;
+}
+
+.add-user-btn {
+    color : white !important;
+}
+
+.vacation-schedule {
+    padding: 1.5rem;
+    margin: 1rem 0;
+    background-color:#eee;
+}
+
+.vacation-schedule-title{
+    font-size:0.9rem;
+}
+
+.vacation-time{
+    border:0.8px solid #ddd;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.vacation-sub-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.vacation-badge-future {
+    text-align: center;
+    background-color:darkcyan;
+    border-radius: 10px;
+    color:#fff;
+    padding:0 0.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vacation-badge-past {
+    text-align: center;
+    background-color:rgb(138, 138, 138);
+    border-radius: 10px;
+    color:#fff;
+    padding:0 0.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vacation-badge-text {
+    width:100%;
+    font-size :0.8rem;
+    display: inline-block;
 }

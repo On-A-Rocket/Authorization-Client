@@ -1,11 +1,19 @@
-import React from 'react';
-import { Container, Row, Col, Dropdown } from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Container, Row, Col, Dropdown, Form } from 'react-bootstrap';
 import { AiOutlinePlus } from 'react-icons/ai';
 import { ModalContext } from '../context/ModalContext';
+import DatePicker from 'react-datepicker';
+import "react-datepicker/dist/react-datepicker.css";
 
-const VacationModal = () => {
 
-  let {handleModal} = React.useContext(ModalContext);
+const VacationModal = (props) => {
+  let { handleModal } = React.useContext(ModalContext);
+  const [datepick, setDatepick] = useState({
+    date : new Date().toISOString()
+  })
+  const handleChange =(value) => {
+    setDatepick({date:value})
+  }
 
   return (
 
@@ -23,6 +31,15 @@ const VacationModal = () => {
           <div className="apply-vacation-datePick d-flex mb-5">
             <div>시작일</div>
             <div>종료일</div>
+            <div>
+
+            <Form.Group>
+            <Form.Label>YYYY/MM/DD</Form.Label>
+            <DatePicker dateFormat="YYYY/MM/DD" onChange={handleChange} value={datepick} />
+            
+          </Form.Group>
+
+            </div>
           </div>
           <div>
             <ul className="vacation-list-wrap">

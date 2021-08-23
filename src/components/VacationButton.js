@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { MdBeachAccess } from 'react-icons/md';
 import { Button } from 'react-bootstrap';
 import './VacationButton.css'
@@ -16,7 +17,7 @@ const VacationButton = () => {
           <button className="btn-disabled">
             <div className="btn-point">
               <span className="btn-icon-name">
-                휴가 신청 내역
+                <Link to="/vacation-list" className="w-100">휴가 신청 내역</Link>
               </span>
             </div>
           </button>

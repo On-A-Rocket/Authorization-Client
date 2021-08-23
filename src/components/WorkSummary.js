@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, ProgressBar } from 'react-bootstrap';
 
 const WorkSummary = () => {
 
@@ -7,21 +7,19 @@ const WorkSummary = () => {
     <>
       <Container className="container-wrap p-5 mb-4">
         <Row>
-          <Col>
-            <Row className="d-flex flex-column">
-              <Col>
-                <p className="work-detail-title">총 예정 근무</p>
-                <div>
-                  <span className="work-total-time">40</span>
-                  <span>시간</span>
-                </div>
-              </Col>
-              <Col>
-                <div>bar</div>
-              </Col>
-            </Row>
+          <Col className="mb-3">
+
+            <Col>
+              <p className="work-detail-title">총 예정 근무</p>
+              <div>
+                <span className="work-total-time">40</span>
+                <span>시간</span>
+              </div>
+            </Col>
+
+
           </Col>
-          <Col>
+          <Col className="mb-3">
             <Row>
               <Col>
                 <p className="work-detail-title">근무 상세</p>
@@ -38,7 +36,7 @@ const WorkSummary = () => {
               </Col>
             </Row>
           </Col>
-          <Col>
+          <Col className="mb-3">
             <Row>
               <Col>
                 <p className="work-detail-title">유급 휴가</p>
@@ -50,6 +48,13 @@ const WorkSummary = () => {
                 </div>
               </Col>
             </Row>
+          </Col>
+        </Row>
+        <Row>
+          <Col xs={8}>
+            <div>
+              <ProgressBar now={60} />
+            </div>
           </Col>
         </Row>
       </Container>

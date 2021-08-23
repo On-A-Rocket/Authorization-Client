@@ -6,12 +6,8 @@ const Modal = () => {
   let { modalContent, modal } = React.useContext(ModalContext);
   if (modal) {
     return ReactDOM.createPortal(
-      <div
-        className="modalRoot"
-      >
-        
-          {modalContent}
-        
+      <div className="modalRoot">
+        {modalContent}
       </div>,
       document.querySelector("#modal-root")
     );

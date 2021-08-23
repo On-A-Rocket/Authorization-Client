@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { AiOutlinePlus } from 'react-icons/ai';
 import { Container } from 'react-bootstrap';
 
@@ -26,11 +27,12 @@ const HeaderUser = () => {
 				</ul>
 				<div>
 					<div className="btn-wrap">
+					
 						<button
 							className="btn-active">
 							<div className="btn-point">
 								<span><AiOutlinePlus className="btn-icons" /></span>
-								<span className="btn-icon-name">구성원 추가</span>
+								<span className="btn-icon-name"><Link to="/add-user" className="add-user-btn">구성원 추가</Link></span>
 							</div>
 						</button>
 					</div>

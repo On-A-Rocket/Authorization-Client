@@ -1,7 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Navbar, Container, Nav } from 'react-bootstrap';
 import "./Header.css";
-import HeaderSchedule from './HeaderSchedule';
+
 
 const Header = () => {
 	
@@ -9,10 +10,10 @@ const Header = () => {
 	return (
 		<div className="header-wrapper">
 			<Navbar>
-				<Container>
+				<Container className="mt-2 mb-2">
 					<Navbar.Brand href="/">Flexsys</Navbar.Brand>
 					<Nav>
-						<Nav.Link href="/">
+						<Link to="/">
 							<button className="d-flex flex-column align-items-center header-icon">
 								<span>
 									<svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" className="bi bi-house-door-fill" viewBox="0 0 16 16">
@@ -21,8 +22,8 @@ const Header = () => {
 								</span>
 								<span className="header-icon-name">홈</span>
 							</button>
-						</Nav.Link>
-						<Nav.Link href="/work">
+						</Link>
+						<Link to="/work">
 							<button className="d-flex flex-column align-items-center header-icon">
 								<span>
 									<svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" className="bi bi-stopwatch-fill" viewBox="0 0 16 16">
@@ -31,8 +32,8 @@ const Header = () => {
 								</span>
 								<span className="header-icon-name">근무·휴가</span>
 							</button>
-						</Nav.Link>
-						<Nav.Link href="/user">
+						</Link>
+						<Link to="/user">
 							<button className="d-flex flex-column align-items-center header-icon">
 								<span>
 									<svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" className="bi bi-people-fill" viewBox="0 0 16 16">
@@ -43,7 +44,7 @@ const Header = () => {
 								</span>
 								<span className="header-icon-name">사람</span>
 							</button>
-						</Nav.Link>
+						</Link>
 					</Nav>
 					<button className="header-icon">
 						<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" className="bi bi-person-circle" viewBox="0 0 16 16">
@@ -53,8 +54,6 @@ const Header = () => {
 					</button>
 				</Container>
 			</Navbar>
-			<HeaderSchedule />
-			
 		</div>
 	);
 }
