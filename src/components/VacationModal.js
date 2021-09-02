@@ -1,19 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Container, Row, Col, Dropdown, Form } from 'react-bootstrap';
 import { AiOutlinePlus } from 'react-icons/ai';
 import { ModalContext } from '../context/ModalContext';
-import DatePicker from 'react-datepicker';
+import DatePicker, { registerLocale } from 'react-datepicker';
+import { ko } from "date-fns/esm/locale"
 import "react-datepicker/dist/react-datepicker.css";
+import moment from 'moment';
+import AddStep from './AddStep';
 
 
-const VacationModal = (props) => {
+const VacationModal = () => {
   let { handleModal } = React.useContext(ModalContext);
-  const [datepick, setDatepick] = useState({
-    date : new Date().toISOString()
-  })
-  const handleChange =(value) => {
-    setDatepick({date:value})
-  }
+  const [startDate, setStartDate] = useState(null);
+  const [endDate, setEndDate] = useState(null);
+
+  registerLocale("ko", ko);
+
+  console.log(startDate, endDate)
+
+  const [show, setShow] = useState(false);
+  const target = useRef(null);
 
   return (
 
@@ -29,38 +35,55 @@ const VacationModal = (props) => {
             </div>
           </div>
           <div className="apply-vacation-datePick d-flex mb-5">
-            <div>시작일</div>
-            <div>종료일</div>
             <div>
-
-            <Form.Group>
-            <Form.Label>YYYY/MM/DD</Form.Label>
-            <DatePicker dateFormat="YYYY/MM/DD" onChange={handleChange} value={datepick} />
-            
-          </Form.Group>
-
+              <span>시작일</span>
+              <span>
+                <DatePicker
+                  selected={startDate}
+                  onChange={(date) => setStartDate(date)}
+                  placeholderText="날짜를 선택해주세요."
+                  dateFormat="yyyy.MM.dd(eee)"
+                  minDate={new Date()}
+                  locale="ko"
+                />
+              </span>
             </div>
+            <div>
+              <span>종료일</span>
+              <span>
+                <DatePicker
+                  selected={endDate}
+                  onChange={(date) => setEndDate(date)}
+                  placeholderText="날짜를 선택해주세요."
+                  dateFormat="yyyy.MM.dd(eee)"
+                  locale="ko"
+                  minDate={startDate}
+                />
+              </span>
+            </div>
+
           </div>
           <div>
             <ul className="vacation-list-wrap">
               <li className="vacation-lists">
                 <div className="vacation-list-item d-flex justify-content-between align-items-center">
-                  <div className="vacation-list-date">
-                    <span className="vacation-list-date-text">8월 16일 (화)</span>
+                  <div className="vacation-list-date d-flex jutify-content-between">
+                    {startDate && endDate &&
+                      (
+                        <>
+                          <span className="vacation-list-date-text">
+                            {moment(startDate).format('YYYY.MM.DD')} ~ {moment(endDate).format('YYYY.MM.DD')}
+                          </span>
+                          <Form.Select aria-label="Default select example" className="vacation-type-select">
+                            <option>선택</option>
+                            <option value="1">오전반차</option>
+                            <option value="2">오후반차</option>
+                            <option value="3">하루종일</option>
+                          </Form.Select>
+                        </>
+                      )}
                   </div>
-                  <div>
-                    <Dropdown>
-                      <Dropdown.Toggle className="drop-down-menu" id="dropdown-basic">
-                        선택
-                      </Dropdown.Toggle>
 
-                      <Dropdown.Menu>
-                        <Dropdown.Item href="#/action-1">오전반차</Dropdown.Item>
-                        <Dropdown.Item href="#/action-2">오후반차</Dropdown.Item>
-                        <Dropdown.Item href="#/action-3">하루종일</Dropdown.Item>
-                      </Dropdown.Menu>
-                    </Dropdown>
-                  </div>
                 </div>
               </li>
             </ul>
@@ -80,16 +103,25 @@ const VacationModal = (props) => {
 
             <div className="apply-subject-step p-3 mt-3 mb-3">
               <p className="apply-subject-title">1단계</p>
-              <button className="apply-subject-btn">
-                <div className="apply-subject-plus">
-                  <div className="apply-subject-plus-icon">
-                    <span className="plus-icon-circle"><AiOutlinePlus className="plus-icon" /></span>
+              {show ?
+
+                <AddStep target={target.current} show={show} />
+                : <button className="apply-subject-btn" ref={target} onClick={() => setShow(!show)}>
+
+                  <div className="apply-subject-plus">
+                    <div className="apply-subject-plus-icon">
+                      <span className="plus-icon-circle"><AiOutlinePlus className="plus-icon" /></span>
+                    </div>
+                    <span className="apply-subject-txt">대상 추가하기</span>
                   </div>
-                  <span className="apply-subject-txt">대상 추가하기</span>
-                </div>
-              </button>
+
+                </button>
+              }
+
+
             </div>
           </div>
+
           <div className="apply-add">
             <button className="apply-add-wrap">
               <div className="apply-add-step">단계 추가하기</div>

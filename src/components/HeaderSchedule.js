@@ -1,8 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import VacationButton from './VacationButton';
 import HeaderCalender from './HeaderCalender';
 import { Container } from 'react-bootstrap';
 import "./HeaderSchedule.css"
+import { BsPencilSquare } from 'react-icons/bs'
 
 import { ModalProvider } from '../context/ModalContext';
 
@@ -11,20 +13,20 @@ const HeaderSchedule = () => {
 	return (
 		<ModalProvider>
 			<div className="header-schedule">
-				<Container className="d-flex justify-content-between align-items-center pt-3 pb-3">
+				<Container className="d-flex justify-content-between align-items-center pt-3 pb-3 calender-wrapper">
 					<ul className="d-flex">
 						<li>
-							<button className="d-flex justify-content-center align-items-center">
+							<Link to="/work" className="d-flex justify-content-center align-items-center link-to-path">
 
 								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-person-fill" viewBox="0 0 16 16">
 									<path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
 								</svg>
 
 								<div className="header-schedule-name">내 스케줄</div>
-							</button>
+							</Link>
 						</li>
 						<li>
-							<button className="d-flex justify-content-center align-items-center">
+							<Link to="/work/teams-schedule" className="d-flex justify-content-center align-items-center link-to-path">
 
 								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-people-fill" viewBox="0 0 16 16">
 									<path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
@@ -33,10 +35,18 @@ const HeaderSchedule = () => {
 								</svg>
 
 								<div className="header-schedule-name">구성원 스케줄</div>
-							</button>
+							</Link>
+						</li>
+						<li>
+							<Link to="/work/authorization" className="d-flex justify-content-center align-items-center link-to-path">
+
+								<BsPencilSquare />
+
+								<div className="header-schedule-name">휴가 결재 관리</div>
+							</Link>
 						</li>
 					</ul>
-					<div>
+					<div className="calender">
 						<HeaderCalender />
 					</div>
 					<div>

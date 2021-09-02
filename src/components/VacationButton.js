@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { MdBeachAccess } from 'react-icons/md';
-import { Button } from 'react-bootstrap';
 import './VacationButton.css'
 import VacationModal from './VacationModal';
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Home, Work, Users, AddUser, VacationList} from '../pages';
+import {Home, Work, Users, AddUser, VacationList, Authorization} from '../pages';
 import { Route } from 'react-router-dom';
 
 class App extends Component {
@@ -11,6 +11,7 @@ class App extends Component {
                 <Route exact path="/user" component={Users} />
                 <Route exact path="/add-user" component={AddUser} />
                 <Route exact path="/vacation-list" component={VacationList} />
+                <Route exact path="/work/authorization" component={Authorization} />
             </div>
         );
     }

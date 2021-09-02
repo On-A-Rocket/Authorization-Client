@@ -9,6 +9,7 @@
     "bootstrap": "^5.0.2",
     "cross-env": "^7.0.3",
     "emoji-picker-react": "^3.4.8",
+    "moment": "^2.29.1",
     "react": "^17.0.2",
     "react-bootstrap": "^2.0.0-beta.4",
     "react-datepicker": "^4.2.1",

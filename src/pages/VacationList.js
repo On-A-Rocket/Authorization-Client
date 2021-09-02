@@ -39,11 +39,11 @@ const VacationList = () => {
               <ul className="vacation-time-line">
                 <li className="d-flex align-items-center">
                   <Col className="vacation-date" xs={3}>8.17 (화)</Col>
-                  <Col className="vacation-thumb-emoji" xs={1}>
-                    <span className="px-2" aria-label="🏖️, beach_with_umbrella">
+                  <div className="vacation-thumb-emoji mx-2">
+                    <span aria-label="🏖️, beach_with_umbrella">
                       <span>🏖️</span>
                     </span>
-                  </Col>
+                  </div>
                   <Col xs={1} className="vacation-name">연차</Col>
                   <Col xs={4} className="vacation-period">오전 9:00 ~ 오후 6:00</Col>
                   <Col xs={1} className="vacation-time">8H</Col>
@@ -64,11 +64,11 @@ const VacationList = () => {
               <ul className="vacation-time-line">
                 <li className="d-flex align-items-center">
                   <Col className="vacation-date" xs={3}>8.17 (화)</Col>
-                  <Col className="vacation-thumb-emoji" xs={1}>
-                    <span className="px-2" aria-label="🏖️, beach_with_umbrella">
+                  <div className="vacation-thumb-emoji mx-2">
+                    <span aria-label="🏖️, beach_with_umbrella">
                       <span>🏖️</span>
                     </span>
-                  </Col>
+                  </div>
                   <Col xs={1} className="vacation-name">연차</Col>
                   <Col xs={4} className="vacation-period">오전 9:00 ~ 오후 6:00</Col>
                   <Col xs={1} className="vacation-time">8H</Col>
