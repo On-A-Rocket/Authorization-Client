@@ -13,6 +13,17 @@ const VacationModal = () => {
   let { handleModal } = React.useContext(ModalContext);
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
+  const [countList, setCountList] = useState([0]);
+
+  const onAddStep = () => {
+    let countArr = [...countList];
+    let counter = countArr.slice(-1)[0];
+    counter += 1;
+    
+    countArr.push(counter);
+    setCountList(countArr);
+    
+  }
 
   registerLocale("ko", ko);
 
@@ -100,9 +111,11 @@ const VacationModal = () => {
             <div className="apply-subject-inner">
               <h3 className="apply-subject-title mb-3">승인 대상</h3>
             </div>
+                        
+            {countList && countList.map( (item, i) => (
 
-            <div className="apply-subject-step p-3 mt-3 mb-3">
-              <p className="apply-subject-title">1단계</p>
+            <div key={i} className="apply-subject-step p-3 mt-3 mb-3">
+              <p className="apply-subject-title">{i+1}단계</p>
               {show ?
 
                 <AddStep target={target.current} show={show} />
@@ -120,10 +133,11 @@ const VacationModal = () => {
 
 
             </div>
+            ))}
           </div>
 
           <div className="apply-add">
-            <button className="apply-add-wrap">
+            <button className="apply-add-wrap" onClick={onAddStep}>
               <div className="apply-add-step">단계 추가하기</div>
             </button>
           </div>
