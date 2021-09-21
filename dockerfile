@@ -5,10 +5,10 @@ WORKDIR /app
 ENV PATH /app/node_modules/.bin:$PATH
 COPY . .
 
-RUN npm install
 RUN npm install -g react-scripts
 RUN npm install -g react-router-dom
 RUN npm install -g sass
+RUN npm install
 
 EXPOSE 3000
 
